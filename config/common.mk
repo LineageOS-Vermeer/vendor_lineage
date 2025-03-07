@@ -5,6 +5,10 @@ $(call inherit-product-if-exists, vendor/extras/lineage.mk)
 ifeq ($(WITH_GMS),true)
 $(call inherit-product, vendor/google/gms/config.mk)
 $(call inherit-product, vendor/google/pixel/config.mk)
+
+
+# Don't dexpreopt prebuilts (For GMS)
+DONT_DEXPREOPT_PREBUILTS := true
 endif
 
 PRODUCT_BRAND ?= LineageOS
